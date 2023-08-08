@@ -7,12 +7,13 @@ export default function ApiTest() {
 
     // fetch API
     const getAPIResponse = async () => {
+        
         const url = 'https://cat-fact.herokuapp.com/facts';
-
         let response = await fetch(url);
         response = await response.json();
         // console.log(response);
         setData(response);
+
     }
 
 
@@ -21,25 +22,24 @@ export default function ApiTest() {
     }, [])
 
 
-    console.log(Data[0])
+    //   console.log(Data[0])
     return (
         <View>
             {
-                Data ? <View style={style.container}>
-                    <Text style={{ fontSize: 30, textDecorationLine: 'underline' }}>Facts About Cats</Text>
-                    {
-                        // redenering each index using map()
-                        Data.map((item, index) => {
-                            console.log(item);
-                            return <Text style={style.textStyle}>{item?.text}</Text>
+                Data ?
+                    <View style={style.container}>
+                        <Text style={{ fontSize: 30, textDecorationLine: 'underline' }}>Facts About Cats</Text>
+                        {
+                            // redenering each index using map()
+                            Data.map((item, index) => {
+                                console.log(item);
+                                return <Text style={style.textStyle}>{item?.text}</Text>
+                            }
+                            )
+                            //map(f(item,index))
                         }
-                        )
-                        //map(f(item,index))
-                    }
-                </View> : null
-
+                    </View> : null
             }
-
         </View>
     )
 }
