@@ -4,26 +4,28 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  Alert
+  Alert,
 } from 'react-native'
 import React, { useState } from 'react'
 
 export default function Login(props) {
+  const password = 121212;
   const [valueTextInput1, setValueTextInput1] = useState("");
   const [valueTextInput2, setValueTextInput2] = useState("");
 
   const myAlert = () => {
-    if (valueTextInput1.length > 3 && valueTextInput2 > 10) {
+    if (valueTextInput1.length > 3 && valueTextInput2 == password) {
       Alert.alert(
-        "User Credentials",
-        "Name: " + valueTextInput1 + "\n" + "Age: " + valueTextInput2,
+        'Successful',
+        'User Logged in successfully',
+        // "Name: " + valueTextInput1 + "\n" + "Age: " + valueTextInput2,
         [
           {
             text: "Dashboard",
             onPress: () =>
               props.navigation.navigate("Dashboard", {
                 name: valueTextInput1,
-                age: valueTextInput2,
+                password: valueTextInput2,
               }),
           },
         ]
@@ -32,7 +34,9 @@ export default function Login(props) {
     else {
       Alert.alert(
         'Wrong',
-        'Please enter Name of more than 3 characters or\nAge greater than 10',
+        // 'Please enter Name of more than 3 characters or\nAge greater than 10',
+        valueTextInput1.length < 3 ?
+          'Name contains characters less than 3' : 'Password is Incorrect',
         [{ text: 'Go Back' }]
       );
     }
@@ -49,7 +53,7 @@ export default function Login(props) {
 
         <TextInput
           style={style.input}
-          placeholder="write your name"
+          placeholder="Enter your name"
           onChangeText={(text) => setValueTextInput1(text)}
           value={valueTextInput1}
         />
@@ -57,13 +61,14 @@ export default function Login(props) {
 
       <View style={style.SubContent}>
         <Text style={{ fontSize: 20, fontWeight: "bold", color: "#435B66" }}>
-          Age:{" "}
+          Pass:{" "}
         </Text>
         <TextInput
           style={style.input}
-          placeholder="enter your age"
+          placeholder="* * * * * * "
           onChangeText={(text) => setValueTextInput2(text)}
           value={valueTextInput2}
+          secureTextEntry={true}
         />
       </View>
 
