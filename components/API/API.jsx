@@ -11,7 +11,6 @@ export default function ApiTest() {
         const url = 'https://cat-fact.herokuapp.com/facts';
         let response = await fetch(url);
         response = await response.json();
-        // console.log(response);
         setData(response);
 
     }
