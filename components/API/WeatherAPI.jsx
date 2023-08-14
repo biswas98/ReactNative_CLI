@@ -10,15 +10,14 @@ export default function WeatherAPI() {
 
         let response = await fetch(url);
         response = await response.json();
-
-
-        console.log(response);
-
+        
+        console.log(response[0].Key)
     }
 
     useEffect(() => {
         locationPos();
     }, [])
+
     return (
         <View>
             <Text></Text>
