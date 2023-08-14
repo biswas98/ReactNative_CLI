@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React, { useEffect } from 'react'
-
+import {API_NAME} from '@env'
 
 export default function WeatherAPI() {
 
@@ -18,10 +18,10 @@ export default function WeatherAPI() {
     // useEffect(() => {
     //     locationPos();
     // },[])
-
+    console.log(API_NAME);
     return (
         <View>
-            <Text></Text>
+            <Text>{API_NAME}</Text>
         </View>
     )
 }
