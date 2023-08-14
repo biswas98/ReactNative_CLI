@@ -18,7 +18,7 @@ export default function WeatherAPI() {
     // useEffect(() => {
     //     locationPos();
     // },[])
-    console.log(API_NAME);
+    console.log(process.env.REACT_APP_API_KEY)
     return (
         <View>
             <Text></Text>
