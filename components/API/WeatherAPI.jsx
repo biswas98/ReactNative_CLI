@@ -1,24 +1,24 @@
 import { View, Text } from 'react-native'
 import React, { useEffect } from 'react'
-
+import { API_KEY } from '@env';
 
 export default function WeatherAPI() {
 
-    // const locationPos = async () => {
-    //     const url = 'http://dataservice.accuweather.com/locations/v1/cities/search?apikey=0OiFaUcTq079GAz9e4wqhIsvQtQdu9hV&q=thane'
-
-    //     let response = await fetch(url);
-    //     response = await response.json();
-
-        
+    const locationPos = async () => {
        
-        
-    // }
+        const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=thane`
 
-    // useEffect(() => {
-    //     locationPos();
-    // },[])
-    console.log(process.env.REACT_APP_API_KEY)
+        let response = await fetch(url);
+        response = await response.json();
+
+
+        console.log(response);
+
+    }
+
+    useEffect(() => {
+        locationPos();
+    }, [])
     return (
         <View>
             <Text></Text>
