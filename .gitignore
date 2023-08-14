@@ -1,5 +1,7 @@
 # OSX
 #
+.gitignore
+.env
 .DS_Store
 
 # Xcode

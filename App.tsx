@@ -18,14 +18,15 @@ const Stack = createNativeStackNavigator();
 function App() {
 	// console.log(Platform.OS);
 	return (
-		<NavigationContainer>
-			<Stack.Navigator>
-				{/* <Stack.Screen name='Login' component={Login}/>
-				<Stack.Screen name='Dashboard' component={Dashboard}/>
-				<Stack.Screen name='API' component={API}/> */}
-				<Stack.Screen name='WeatherAPI' component={WeatherAPI}/>
-			</Stack.Navigator>
-		</NavigationContainer>
+		// <NavigationContainer>
+		// 	<Stack.Navigator>
+		// 		{/* <Stack.Screen name='Login' component={Login}/>
+		// 		<Stack.Screen name='Dashboard' component={Dashboard}/>
+		// 		<Stack.Screen name='API' component={API}/> */}
+		// 		<Stack.Screen name='WeatherAPI' component={WeatherAPI}/>
+		// 	</Stack.Navigator>
+		// </NavigationContainer>
+		<Text>Text: {process.env.REACT_APP_TEST}</Text>
 	)
 }
 

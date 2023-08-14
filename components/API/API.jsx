@@ -7,7 +7,6 @@ export default function ApiTest() {
 
     // fetch API
     const getAPIResponse = async () => {
-        
         const url = 'https://cat-fact.herokuapp.com/facts';
         let response = await fetch(url);
         response = await response.json();
