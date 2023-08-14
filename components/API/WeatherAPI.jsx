@@ -1,5 +1,6 @@
 import { View, Text } from 'react-native'
 import React, { useEffect } from 'react'
+// import 'dotenv/config'
 
 export default function WeatherAPI() {
 
@@ -20,7 +21,7 @@ export default function WeatherAPI() {
 
     return (
         <View>
-            <Text></Text>
+            <Text>jdfklsjfr</Text>
         </View>
     )
 }
