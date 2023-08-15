@@ -15,7 +15,9 @@ export default function WeatherAPI() {
     }
 
     useEffect(() => {
+
         locationPos();
+        
     }, [])
 
     return (
