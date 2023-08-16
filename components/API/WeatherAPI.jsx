@@ -4,31 +4,40 @@ import { API_KEY } from '@env';
 
 export default function WeatherAPI() {
 
-    const [locationCode, setLocationCode] = useState();
-    const [temp, setTemp] = useState();
+    const [ place , setPlace ] = useState();
+    const [ locationCode, setLocationCode ] = useState();
+    const [ temp, setTemp]  = useState();
 
     const locationPos = async () => {
 
-        const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=thane`;
+        try{
 
-        let response = await fetch(url);
-        response = await response.json();
-
-        location_Key = response[0].Key;
-        setLocationCode(location_Key);
-
-        const sm = async () => {
-
-            const url = `http://dataservice.accuweather.com/currentconditions/v1/${location_Key}?apikey=${API_KEY}`;
-
+            const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=delhi`;
+            
             let response = await fetch(url);
             response = await response.json();
+            
+            location_Key = response[0].Key;
+            setLocationCode(location_Key);
 
-            let temperature = response[0].Temperature.Metric.Value;
-            setTemp(temperature);
+            const sm = async () => {
+
+                const url = `http://dataservice.accuweather.com/currentconditions/v1/${location_Key}?apikey=${API_KEY}`;
+    
+                let response = await fetch(url);
+                response = await response.json();
+    
+                let temperature = response[0].Temperature.Metric.Value;
+                setTemp(temperature);
+            }
+    
+            sm();
+
+        }catch{
+            console.log('unable to process');
         }
 
-        sm();
+        
     }
 
     useEffect(() => {
