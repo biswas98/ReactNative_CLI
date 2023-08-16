@@ -18,7 +18,7 @@ export default function WeatherAPI() {
         setLocationCode(location_Key);
     }    
 
-    const temp = () =>{
+    const temperature = () =>{
         const url = `http://dataservice.accuweather.com/currentconditions/v1/204847?apikey=${API_KEY}`
     }
 
