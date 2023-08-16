@@ -17,25 +17,19 @@ export default function WeatherAPI() {
         location_Key = response[0].Key;
         setLocationCode(location_Key);
 
-        setTemp(async () => {
+        const sm = async () => {
 
-            const url = `http://dataservice.accuweather.com/currentconditions/v1/204847?apikey=${API_KEY}`;
+            const url = `http://dataservice.accuweather.com/currentconditions/v1/${location_Key}?apikey=${API_KEY}`;
 
             let response = await fetch(url);
             response = await response.json();
 
             let temperature = response[0].Temperature.Metric.Value;
-            
-        })
+            setTemp(temperature);
+        }
 
-        console.log(locationCode);
-        // console.log();
+        sm();
     }
-
-    // const temperature = async () => {
-
-
-    // }
 
     useEffect(() => {
         locationPos();
@@ -45,6 +39,7 @@ export default function WeatherAPI() {
     return (
         <View>
             <Text>{locationCode}</Text>
+            <Text>{temp}</Text>
         </View>
     )
 }
