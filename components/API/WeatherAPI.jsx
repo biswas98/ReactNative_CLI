@@ -4,7 +4,8 @@ import { API_KEY } from '@env';
 
 export default function WeatherAPI() {
 
-    const [data, setData] = useState();
+    const [locationCode, setLocationCode] = useState();
+    const [temp, setTemp] = useState();
 
     const locationPos = async () => {
        
@@ -14,8 +15,12 @@ export default function WeatherAPI() {
         response = await response.json();
         
         location_Key = response[0].Key;
-        setData(location_Key);
+        setLocationCode(location_Key);
     }    
+
+    const temp = () =>{
+        const url = `http://dataservice.accuweather.com/currentconditions/v1/204847?apikey=${API_KEY}`
+    }
 
     useEffect(() => {
         locationPos();
@@ -24,7 +29,7 @@ export default function WeatherAPI() {
 
     return (
         <View>
-            <Text></Text>
+            <Text>{locationCode}</Text>
         </View>
     )
 }
