@@ -15,11 +15,7 @@ export default function WeatherAPI() {
         
         location_Key = response[0].Key;
         setData(location_Key);
-    }
-
-    
-    
-    
+    }    
 
     useEffect(() => {
         locationPos();
