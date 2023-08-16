@@ -16,15 +16,22 @@ export default function WeatherAPI() {
         
         location_Key = response[0].Key;
         setLocationCode(location_Key);
+        
     }    
-
-    const temperature = () =>{
+    
+    const temperature = async () =>{
         const url = `http://dataservice.accuweather.com/currentconditions/v1/204847?apikey=${API_KEY}`
+        
+        let response = await fetch(url);
+        response = await response.json();
+        
+        console.log(response[0].Temperature.Metric.Value);
+        
     }
-
+    
     useEffect(() => {
-        locationPos();
-
+        // locationPos();
+        temperature();
     }, [])
 
     return (
