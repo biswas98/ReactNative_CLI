@@ -8,30 +8,38 @@ export default function WeatherAPI() {
     const [temp, setTemp] = useState();
 
     const locationPos = async () => {
-       
-        const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=thane`
+
+        const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=thane`;
 
         let response = await fetch(url);
         response = await response.json();
-        
+
         location_Key = response[0].Key;
         setLocationCode(location_Key);
-        
-    }    
-    
-    const temperature = async () =>{
-        const url = `http://dataservice.accuweather.com/currentconditions/v1/204847?apikey=${API_KEY}`
-        
-        let response = await fetch(url);
-        response = await response.json();
-        
-        console.log(response[0].Temperature.Metric.Value);
-        
+
+        setTemp(async () => {
+
+            const url = `http://dataservice.accuweather.com/currentconditions/v1/204847?apikey=${API_KEY}`;
+
+            let response = await fetch(url);
+            response = await response.json();
+
+            let temperature = response[0].Temperature.Metric.Value;
+            
+        })
+
+        console.log(locationCode);
+        // console.log();
     }
-    
+
+    // const temperature = async () => {
+
+
+    // }
+
     useEffect(() => {
-        // locationPos();
-        temperature();
+        locationPos();
+        // temperature();
     }, [])
 
     return (
