@@ -1,8 +1,10 @@
 import { View, Text } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { API_KEY } from '@env';
 
 export default function WeatherAPI() {
+
+    const [data, setData] = useState();
 
     const locationPos = async () => {
        
@@ -11,13 +13,17 @@ export default function WeatherAPI() {
         let response = await fetch(url);
         response = await response.json();
         
-        console.log(response[0].Key)
+        location_Key = response[0].Key;
+        setData(location_Key);
     }
 
-    useEffect(() => {
+    
+    
+    
 
+    useEffect(() => {
         locationPos();
-        
+
     }, [])
 
     return (
