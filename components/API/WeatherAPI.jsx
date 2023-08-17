@@ -11,24 +11,31 @@ export default function WeatherAPI() {
     const locationPos = async () => {
 
 
-        const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${place}`;
-
-        let response = await fetch(url);
-        response = await response.json();
-
-        location_Key = response[0].Key;
-        setLocationCode(location_Key);
-
-        (async () => {
-
-            const url = `http://dataservice.accuweather.com/currentconditions/v1/${location_Key}?apikey=${API_KEY}`;
+        try {
+            const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${place}`;
 
             let response = await fetch(url);
             response = await response.json();
 
-            let temperature = response[0].Temperature.Metric.Value;
-            setTemp(temperature);
-        })()
+            location_Key = response[0].Key;
+            setLocationCode(location_Key);
+
+            (async () => {
+
+                const url = `http://dataservice.accuweather.com/currentconditions/v1/${location_Key}?apikey=${API_KEY}`;
+
+                let response = await fetch(url);
+                response = await response.json();
+
+                let temperature = response[0].Temperature.Metric.Value;
+                setTemp(temperature);
+            })()
+            
+            console.log("succeful");
+
+        } catch (e) {
+            console.log(e);
+        }
     }
     useEffect(() => {
         locationPos();
