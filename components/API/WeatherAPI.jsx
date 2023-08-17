@@ -11,7 +11,7 @@ export default function WeatherAPI() {
     const locationPos = async () => {
 
 
-        const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=delhi`;
+        const url = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${place}`;
 
         let response = await fetch(url);
         response = await response.json();
@@ -32,7 +32,7 @@ export default function WeatherAPI() {
     }
     useEffect(() => {
         locationPos();
-    }, [])
+    }, [place])
 
     return (
         <View>
