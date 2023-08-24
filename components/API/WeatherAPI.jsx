@@ -2,7 +2,7 @@ import { View, Text, Button, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { API_KEY } from '@env';
 
-import style from './style'
+import styles from './style'
 
 export default function WeatherAPI() {
 
