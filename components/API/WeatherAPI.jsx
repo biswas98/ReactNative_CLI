@@ -46,7 +46,7 @@ export default function WeatherAPI() {
     return (
         <View style={styles.apiContainer}>
             <TextInput
-                style={styles.inputBox}
+                style={[styles.inputBox, styles.commonMargin]}
                 placeholder='city'
                 onChangeText={(text) => setPlace(text)}
             />
