@@ -50,7 +50,8 @@ export default function WeatherAPI() {
                 placeholder='city'
                 onChangeText={(text) => setPlace(text)}
             />
-            <Text>{locationCode}</Text>
+            {/* <Text>{locationCode}</Text> */}
+            <Text>The weather at {place}</Text>
             <Text>{temp}</Text>
         </View>
     )

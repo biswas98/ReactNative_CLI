@@ -5,11 +5,11 @@ const styles = StyleSheet.create({
         paddingTop: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        
     },
     inputBox: {
         borderWidth: 1, 
         width: 200,
+        textAlign: 'center',
     },
     
 })
