@@ -44,7 +44,7 @@ export default function WeatherAPI() {
     }, [place])
 
     return (
-        <View>
+        <View style={styles.apiContainer}>
             <TextInput
                 style={styles.inputBox}
                 placeholder='city'
