@@ -51,8 +51,8 @@ export default function WeatherAPI() {
                 onChangeText={(text) => setPlace(text)}
             />
             {/* <Text>{locationCode}</Text> */}
-            <Text>The weather at {place}</Text>
-            <Text>{temp}</Text>
+            <Text style={styles.commonMargin}>The weather at {place}</Text>
+            <Text style={styles.commonMargin}>{temp}</Text>
         </View>
     )
 }

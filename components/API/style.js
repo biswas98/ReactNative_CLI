@@ -2,10 +2,9 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     commonMargin: {
-
+        margin: 50
     },
     apiContainer: {
-        paddingTop: 50,
         justifyContent: 'center',
         alignItems: 'center',
     },
