@@ -2,6 +2,8 @@ import { View, Text, Button, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { API_KEY } from '@env';
 
+import styles from './style'
+
 export default function WeatherAPI() {
 
     const [place, setPlace] = useState();
@@ -44,7 +46,7 @@ export default function WeatherAPI() {
     return (
         <View>
             <TextInput
-                style={{ borderWidth: 1, width: 200, }}
+                style={styles.inputBox}
                 placeholder='city'
                 onChangeText={(text) => setPlace(text)}
             />
