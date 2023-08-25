@@ -46,7 +46,12 @@ export default function FlatListPractice() {
 		<FlatList 
 			keyExtractor={ data => data.key}
 			data={response} 
-			renderItem={ ({item}) => <Text>{item.head}</Text>}
+			renderItem={ ({item}) => (
+				<View>
+					<Text>{item.head}</Text>
+					<Text>{item.message}</Text>
+				</View>
+ 			 )}
 		/>
 	</View>
   )
