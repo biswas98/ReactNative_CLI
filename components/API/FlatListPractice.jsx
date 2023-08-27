@@ -68,7 +68,7 @@ export default function FlatListPractice() {
 			data={response} 
 			renderItem={ ({item}) => (
 				<View style={styles.dataContainer}>
-					<View >
+					<View style={styles.textContainer}>
 						<Text>{item.head}</Text>
 						{item.events.map((item)=>{
 							return <Text>{item?.type}</Text>
@@ -88,5 +88,8 @@ const styles = StyleSheet.create({
 	dataContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between'
+	},
+	textContainer: {
+		borderWidth: 1,
 	}
 })
