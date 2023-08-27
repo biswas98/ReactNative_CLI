@@ -69,8 +69,9 @@ export default function FlatListPractice() {
 			renderItem={ ({item}) => (
 				<View>
 					<Text>{item.head}</Text>
-					<Text>{item.message}</Text>
-
+					{item.events.map((item)=>{
+						<Text>{item?.type}</Text>
+					})}
 				</View>
  			 )}
 		/>
