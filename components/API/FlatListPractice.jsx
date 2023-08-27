@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, StyleSheet } from 'react-native'
 import React from 'react'
 
 export default function FlatListPractice() {
@@ -68,10 +68,10 @@ export default function FlatListPractice() {
 			data={response} 
 			renderItem={ ({item}) => (
 				<View>
-					<View>
+					<View >
 						<Text>{item.head}</Text>
 						{item.events.map((item)=>{
-							<Text>{item?.type}</Text>
+							return <Text>{item?.type}</Text>
 						})}
 					</View>
 					<View>    
@@ -83,3 +83,9 @@ export default function FlatListPractice() {
 	</View>
   )
 }
+
+const styles = StyleSheet.create({
+	dataContainer: {
+		flexDirection: 'row',
+	}
+})
