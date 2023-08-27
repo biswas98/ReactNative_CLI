@@ -67,7 +67,7 @@ export default function FlatListPractice() {
 			keyExtractor={ data => data.key}
 			data={response} 
 			renderItem={ ({item}) => (
-				<View>
+				<View style={styles.dataContainer}>
 					<View >
 						<Text>{item.head}</Text>
 						{item.events.map((item)=>{
@@ -87,5 +87,6 @@ export default function FlatListPractice() {
 const styles = StyleSheet.create({
 	dataContainer: {
 		flexDirection: 'row',
+		justifyContent: 'space-between'
 	}
 })
