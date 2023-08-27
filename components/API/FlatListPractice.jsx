@@ -68,10 +68,15 @@ export default function FlatListPractice() {
 			data={response} 
 			renderItem={ ({item}) => (
 				<View>
-					<Text>{item.head}</Text>
-					{item.events.map((item)=>{
-						<Text>{item?.type}</Text>
-					})}
+					<View>
+						<Text>{item.head}</Text>
+						{item.events.map((item)=>{
+							<Text>{item?.type}</Text>
+						})}
+					</View>
+					<View>    
+						<Text>😄</Text>
+					</View>
 				</View>
  			 )}
 		/>
