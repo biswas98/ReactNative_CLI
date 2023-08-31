@@ -90,6 +90,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textContainer: {
-    borderWidth: 1,
+    // borderWidth: 1,
   },
 });
