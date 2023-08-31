@@ -16,7 +16,6 @@ export default function FlatListPractice() {
     {
       key: 2,
       head: 'Hosted Feature Services',
-
       events: [{type: 'Performance issue'}],
     },
     {
