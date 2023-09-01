@@ -6,7 +6,7 @@ export default function FlatListPractice() {
     const URL = 'https://jsonplaceholder.typicode.com/posts';
     let response = await fetch(URL);
     response = await response.json();
-    console.log(response);
+    console.log(response[0].title);
   };
 
   useEffect(() => {
