@@ -2,14 +2,20 @@ import {View, Text, FlatList, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
 
 export default function FlatListPractice() {
-  useEffect(async () => {
+  const apiResponse = async () => {
     const URL = 'https://jsonplaceholder.typicode.com/posts';
     let response = await fetch(URL);
+    response = await response.json();
+    console.log(response);
+  };
+
+  useEffect(() => {
+    apiResponse();
   }, []);
 
   return (
     <View>
-      <FlatList
+      {/* <FlatList
         keyExtractor={data => data.key}
         data={response}
         renderItem={({item}) => (
@@ -25,7 +31,7 @@ export default function FlatListPractice() {
             </View>
           </View>
         )}
-      />
+      /> */}
     </View>
   );
 }
