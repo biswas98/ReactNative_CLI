@@ -16,7 +16,7 @@ export default function FlatListPractice() {
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
       <View>
         <TextInput style={styles.textInputStyle} />
       </View>
@@ -39,6 +39,7 @@ export default function FlatListPractice() {
 }
 
 const styles = StyleSheet.create({
+  container: {},
   dataContainer: {
     borderWidth: 1,
     flexDirection: 'row',
@@ -48,5 +49,8 @@ const styles = StyleSheet.create({
   textContainer: {
     // borderWidth: 1,
   },
-  textInputStyle: {},
+  textInputStyle: {
+    borderWidth: 1,
+    // margin: 5,
+  },
 });
