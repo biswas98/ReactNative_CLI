@@ -16,9 +16,12 @@ export default function FlatListPractice() {
     apiResponse();
   }, []);
 
-  const onChange = search => {
-    response.filter(data =>
-      data.title.toLowerCase().includes(search.toLowerCase()),
+  const onChange = text => {
+    console.log(text);
+    console.log(
+      response.filter(body =>
+        body.title.toLowerCase().includes(text.toLowerCase()),
+      ),
     );
   };
 
@@ -28,7 +31,7 @@ export default function FlatListPractice() {
         <TextInput
           style={styles.textInputStyle}
           placeholder="Search...."
-          onChange={e => onChange(e.target.value)}
+          onChangeText={text => onChange(text)}
           value={search}
         />
       </View>
