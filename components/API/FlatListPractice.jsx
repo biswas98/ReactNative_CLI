@@ -7,17 +7,19 @@ export default function FlatListPractice() {
 
   const apiResponse = async () => {
     const URL = 'https://jsonplaceholder.typicode.com/posts';
-    let response = await fetch(URL);
-    response = await response.json();
-    setResponse(response);
+    let res = await fetch(URL);
+    res = await res.json();
+    setResponse(res);
   };
 
   useEffect(() => {
     apiResponse();
   }, []);
 
-  const onchange = text => {
-    response.filter(data => data.title.toLowerCase().includes());
+  const onChange = search => {
+    response.filter(data =>
+      data.title.toLowerCase().includes(search.toLowerCase()),
+    );
   };
 
   return (
@@ -26,7 +28,7 @@ export default function FlatListPractice() {
         <TextInput
           style={styles.textInputStyle}
           placeholder="Search...."
-          onChange={e => onchange(e.target.value)}
+          onChange={e => onChange(e.target.value)}
           value={search}
         />
       </View>
