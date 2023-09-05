@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 
 export default function FlatListPractice() {
   const [response, setResponse] = useState();
+  const [search, setSearch] = useState();
 
   const apiResponse = async () => {
     const URL = 'https://jsonplaceholder.typicode.com/posts';
@@ -16,7 +17,7 @@ export default function FlatListPractice() {
   }, []);
 
   const onchange = text => {
-    response.filter();
+    response.filter(data => data.title.toLowerCase().includes());
   };
 
   return (
@@ -25,7 +26,8 @@ export default function FlatListPractice() {
         <TextInput
           style={styles.textInputStyle}
           placeholder="Search...."
-          onChange={onchange}
+          onChange={e => onchange(e.target.value)}
+          value={search}
         />
       </View>
       <FlatList
