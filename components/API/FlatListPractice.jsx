@@ -15,10 +15,16 @@ export default function FlatListPractice() {
     apiResponse();
   }, []);
 
+  const onchange = () => {};
+
   return (
     <View style={styles.container}>
       <View>
-        <TextInput style={styles.textInputStyle} />
+        <TextInput
+          style={styles.textInputStyle}
+          placeholder="Search...."
+          onChange={onchange}
+        />
       </View>
       <FlatList
         keyExtractor={data => data.id}
