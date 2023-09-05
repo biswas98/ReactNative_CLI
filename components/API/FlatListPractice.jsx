@@ -15,7 +15,7 @@ export default function FlatListPractice() {
     apiResponse();
   }, []);
 
-  const onchange = () => {};
+  const onchange = text => {};
 
   return (
     <View style={styles.container}>
