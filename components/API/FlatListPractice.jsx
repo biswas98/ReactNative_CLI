@@ -17,14 +17,14 @@ export default function FlatListPractice() {
 
   return (
     <View>
+      <View>
+        <TextInput style={styles.textInputStyle} />
+      </View>
       <FlatList
         keyExtractor={data => data.id}
         data={response}
         renderItem={({item}) => (
           <View style={styles.dataContainer}>
-            <View>
-              <TextInput style={styles.textInputStyle} />
-            </View>
             <View style={styles.textContainer}>
               <Text>{item.title}</Text>
             </View>
