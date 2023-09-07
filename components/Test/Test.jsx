@@ -11,7 +11,7 @@ export default function Test() {
     <View style={{margin: 20}}>
       <Text>Write something...</Text>
       <TextInput
-        style={{borderWidth: 1}}
+        style={{borderWidth: 1, marginBottom: 20}}
         placeholder="write..."
         placeholderTextColor={'grey'}
         secureTextEntry={state}
