@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import API from './components/API/API';
 import WeatherAPI from './components/API/WeatherAPI';
 import FlatListPractice from './components/API/FlatListPractice';
+import Test from './components/Test/Test';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +21,8 @@ function App() {
 				<Stack.Screen name='Dashboard' component={Dashboard}/>
 				<Stack.Screen name='API' component={API}/> */}
         {/* <Stack.Screen name='WeatherAPI' component={WeatherAPI}/> */}
-        <Stack.Screen name="FlatListPractice" component={FlatListPractice} />
+        {/* <Stack.Screen name="FlatListPractice" component={FlatListPractice} /> */}
+        <Stack.Screen name="Test" component={Test} />
       </Stack.Navigator>
     </NavigationContainer>
   );
