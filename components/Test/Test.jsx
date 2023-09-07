@@ -1,4 +1,4 @@
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, TextInput, Button} from 'react-native';
 import React from 'react';
 
 export default function Test() {
@@ -11,6 +11,7 @@ export default function Test() {
         placeholderTextColor={'grey'}
         secureTextEntry={true}
       />
+      <Button title="click" />
     </View>
   );
 }
