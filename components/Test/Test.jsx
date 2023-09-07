@@ -9,7 +9,7 @@ export default function Test() {
         style={{borderWidth: 1}}
         placeholder="write..."
         placeholderTextColor={'grey'}
-        secureTextEntry={false}
+        secureTextEntry={true}
       />
     </View>
   );
