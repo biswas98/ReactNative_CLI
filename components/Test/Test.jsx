@@ -1,7 +1,12 @@
 import {View, Text, TextInput, Button} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 export default function Test() {
+  const [state, setState] = useState(true);
+
+  const onChange = () => {
+    state ? setState(false) : setState(true);
+  };
   return (
     <View style={{margin: 20}}>
       <Text>Write something...</Text>
@@ -9,9 +14,9 @@ export default function Test() {
         style={{borderWidth: 1}}
         placeholder="write..."
         placeholderTextColor={'grey'}
-        secureTextEntry={true}
+        secureTextEntry={state}
       />
-      <Button title="click" />
+      <Button title="click" onPress={onChange} />
     </View>
   );
 }
