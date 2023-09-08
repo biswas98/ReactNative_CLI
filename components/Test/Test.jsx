@@ -13,7 +13,7 @@ export default function Test() {
       <TextInput
         style={{borderWidth: 1, marginBottom: 20}}
         placeholder="write..."
-        placeholderTextColor={'grey'}
+        placeholderTextColor={'red'}
         secureTextEntry={state}
       />
       <Button title="click" onPress={onChange} />
