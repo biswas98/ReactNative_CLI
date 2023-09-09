@@ -30,7 +30,7 @@ export default function FlatListPractice() {
       <View>
         <TextInput
           style={styles.textInputStyle}
-          placeholder="Search..."
+          placeholder="Search...."
           onChangeText={text => onChange(text)}
           value={search}
         />
