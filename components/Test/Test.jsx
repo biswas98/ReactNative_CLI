@@ -16,6 +16,12 @@ export default function Test() {
         placeholderTextColor={'grey'}
         secureTextEntry={state}
       />
+      <TextInput
+        style={{borderWidth: 1, marginBottom: 20}}
+        placeholder="write..."
+        placeholderTextColor={'grey'}
+        secureTextEntry={state}
+      />
       <Button title="click" onPress={onChange} />
     </View>
   );
