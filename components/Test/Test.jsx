@@ -7,6 +7,8 @@ export default function Test() {
   const onChange = () => {
     state ? setState(false) : setState(true);
   };
+
+  const emailValidation = () => {};
   return (
     <View style={{margin: 20}}>
       <Text>Enter your Email</Text>
@@ -14,7 +16,7 @@ export default function Test() {
         style={{borderWidth: 1, marginBottom: 20}}
         placeholder="Emails..."
         placeholderTextColor={'grey'}
-        secureTextEntry={state}
+        onChange={}
       />
       <Text>Enter your Password</Text>
       <TextInput
