@@ -8,7 +8,10 @@ export default function Test() {
     state ? setState(false) : setState(true);
   };
 
-  const emailValidation = () => {};
+  const emailValidation = email => {
+    let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    return regex.test(email);
+  };
   return (
     <View style={{margin: 20}}>
       <Text>Enter your Email</Text>
@@ -16,7 +19,7 @@ export default function Test() {
         style={{borderWidth: 1, marginBottom: 20}}
         placeholder="Emails..."
         placeholderTextColor={'grey'}
-        onChange={}
+        // onChange={}
       />
       <Text>Enter your Password</Text>
       <TextInput
