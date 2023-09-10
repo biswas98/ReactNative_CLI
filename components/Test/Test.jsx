@@ -3,24 +3,29 @@ import React, {useState} from 'react';
 
 export default function Test() {
   const [state, setState] = useState(true);
+  const [emailState, setEmailState] = useState(false);
 
   const onChange = () => {
     state ? setState(false) : setState(true);
   };
 
-  const emailValidation = email => {
+  const emailValidation = emailState => {
     let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    return regex.test(email);
+    console.log(regex.test(emailState));
   };
   return (
     <View style={{margin: 20}}>
       <Text>Enter your Email</Text>
       <TextInput
         style={{borderWidth: 1, marginBottom: 20}}
-        placeholder="Emails..."
+        placeholder="Email..."
         placeholderTextColor={'grey'}
-        // onChange={}
+        onChange={text => {
+          setEmailState(text);
+          emailValidation(emailState);
+        }}
       />
+      {/* {emailState ? <Text>True</Text> : <Text>false</Text>} */}
       <Text>Enter your Password</Text>
       <TextInput
         style={{borderWidth: 1, marginBottom: 20}}
