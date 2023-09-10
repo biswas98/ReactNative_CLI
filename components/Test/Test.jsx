@@ -9,16 +9,17 @@ export default function Test() {
   };
   return (
     <View style={{margin: 20}}>
-      <Text>Write something...</Text>
+      <Text>Enter your Email</Text>
       <TextInput
         style={{borderWidth: 1, marginBottom: 20}}
-        placeholder="write..."
+        placeholder="Emails..."
         placeholderTextColor={'grey'}
         secureTextEntry={state}
       />
+      <Text>Enter your Password</Text>
       <TextInput
         style={{borderWidth: 1, marginBottom: 20}}
-        placeholder="write..."
+        placeholder="Password..."
         placeholderTextColor={'grey'}
         secureTextEntry={state}
       />
