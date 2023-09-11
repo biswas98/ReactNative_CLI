@@ -25,7 +25,7 @@ export default function Test() {
           emailValidation(emailState);
         }}
       />
-      {/* {emailState ? <Text>True</Text> : <Text>false</Text>} */}
+      {emailState ? <Text>True</Text> : <Text>false</Text>}
       <Text>Enter your Password</Text>
       <TextInput
         style={{borderWidth: 1, marginBottom: 20}}
