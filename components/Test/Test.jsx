@@ -28,6 +28,7 @@ export default function Test() {
       {/* {emailState ? <Text>True</Text> : <Text>false</Text>} */}
       <Text>Enter your Password</Text>
       <TextInput
+        //need to implement validation
         style={{borderWidth: 1, marginBottom: 20}}
         placeholder="Password..."
         placeholderTextColor={'grey'}
